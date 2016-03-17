@@ -1,0 +1,44 @@
+<template name="edit_project">
+	<div class="container pt">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<h2>Edit Project <small>{{name}}</small></h2>
+				<form class="edit_project_form" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="Project Name" value="{{name}}">
+					</div>
+					<div class="form-group">
+						<label>Project Date</label>
+						<div class="input-group datetimepicker">
+    					<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    					<input class="set-due-date form-control" type="text" id="projectDate" name="projectDate" value="{{projectDate}}">
+  						</div>
+					</div>
+					<div class="form-group">
+						<label>Client</label>
+						<input type="text" class="form-control" id="client" name="client" placeholder="Client Name" value="{{client}}">
+					</div>
+					<div class="form-group">
+						<label>Type</label>
+						<input type="text" class="form-control" id="type" name="type" placeholder="Project Type" value="{{type}}">
+					</div>
+					<div class="form-group">
+						<label>Link</label>
+						<input type="text" class="form-control" id="projectlink" name="projectlink" placeholder="Project Link" value="{{projectlink}}">
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<textarea class="form-control" id="description" name="description" placeholder="Description">{{description}}</textarea>
+					</div>
+					<div class="form-group">
+						<label>Project Image</label>
+						<input type="file" id="projectImage" name="projectImage">Current Image: <img src="{{projectImage}}" class="edit-image">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+					<a href="/admin/projects" class="btn btn-default">Go Back</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>
