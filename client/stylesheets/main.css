@@ -10,7 +10,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
-  	background-color: #ffffff;
+  	background-color: #C5D1DD;
   	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -96,6 +96,7 @@ a:after {
 
 .navbar-inverse {
 	background-color: #1abc9c;
+	background-image: url("http://i.imgur.com/GBGgXff.jpg?1");
 	border-color: #16a085;
 }
 
@@ -131,11 +132,13 @@ a:after {
 .mt {
 	margin-top: 40px;
 	margin-bottom: 40px;
+	
 }
 
 .pt {
 	padding-top: 50px;
 	padding-bottom: 50px;
+
 }
 
 
@@ -150,6 +153,8 @@ a:after {
 
 #footer {
 	background-color: #2f2f2f;
+	background-image: url("http://i.imgur.com/3cTu6KG.jpg?1");
+	
 	padding-top: 50px;
 	padding-bottom: 50px; 
 }
