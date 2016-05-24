@@ -114,3 +114,8 @@ Template.registerHelper('getAdminImage', function(){
 	return '/assets/img/user.jpg';
 });
 
+Template.work.events({
+	'click .add-item': function () {
+		FlashMessages.sendSuccess('item added in your cart');
+	}
+});
