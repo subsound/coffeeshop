@@ -12,20 +12,21 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{pathFor 'work'}}">Work</a></li>
+            <li><a href="{{pathFor 'work'}}">Coffee</a></li>
             <li><a href="{{pathFor 'about'}}">About</a></li>
             <li><a href="{{pathFor 'blog'}}">Blog</a></li>
             <li><a href="{{pathFor 'contact'}}">Contact</a></li>
              {{#if currentUser}} 
               <!-- {{#if isUserAdmin}} -->
-            <li><a href="{{pathFor 'list_posts'}}">Posts</a></li>
-            <li><a href="{{pathFor 'list_projects'}}">Projects</a></li>
+            <li><a href="{{pathFor 'list_posts'}}">Blog Manager</a></li>
+            <li><a href="{{pathFor 'list_projects'}}">Coffee Manager</a></li>
                <!-- {{/if}}  -->
             <li><a class="logout-user">Logout</a></li>
             {{else}}
             <li><a href="/admin">Login</a></li>
             <li><a href="/signin">Sign In </a></li>
             {{/if}}
+            <li><a>{{> CartSummary}}</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

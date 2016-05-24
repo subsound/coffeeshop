@@ -3,13 +3,15 @@
 	
 	<div class="container pt">
 		<div class="row mt centered">
-			{{#each projects}}
+			{{#each products}}
 			<div class="col-lg-4">
-				<a class="zoom green" href="/project/{{_id}}"><img class="img-responsive img-center" src="{{projectImage}}" alt="" /></a>
+				<a class="zoom green" href="/project/{{_id}}"><img class="img-responsive img-center" src="{{productImage}}" alt="" /></a>
 				<p>{{name}}</p>
+				<p>{{price}}$</p>
+				{{>CartAddItemButton}}
 			</div>
 			{{else}}
-			<p>There are no projects</p>
+			<p>There are no coffee</p>
 			{{/each}}
 		</div><!-- /row -->
 	</div><!-- /container -->

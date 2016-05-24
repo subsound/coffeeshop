@@ -3,6 +3,11 @@ Template.work.helpers({
 		return Projects.find();
 	}
 });
+Template.work.helpers({
+	products: function () {
+		return Products.find();
+	}
+});
 
 Template.login.events({
 
@@ -98,11 +103,11 @@ Template.registerHelper('formatDate', function(date){
 });
 
 Template.registerHelper('getAdminName', function(){
-	return 'Nicolas Balakhtar';
+	return 'Ira Komar';
 });
 
 Template.registerHelper('getSiteTitle', function(){
-	return 'Nicolas Blog';
+	return 'Coffee Shop';
 });
 
 Template.registerHelper('getAdminImage', function(){

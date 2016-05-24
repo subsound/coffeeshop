@@ -2,26 +2,24 @@
 	<div class="container pt">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2">
-				<h2>Projects</h2>
-				<a href="/admin/projects/add" class="btn btn-primary btn-tiny">Create Project</a>
+				<h2>Products</h2>
+				<a href="/admin/projects/add" class="btn btn-primary btn-tiny">Create Product</a>
 				<br><br>
 				<table class="table table-striped">
 					<tr>
-						<th>Project Name</th>
-						<th>Date</th>
-						<th>Type</th>
-						<th>Link</th>
+						<th>Coffee name</th>
+						<th>Price</th>
 						<th></th>
 					</tr>
 					{{#each projects}}
 						<tr>
 							<td>{{name}}</td>
-							<td>{{projectDate}}</td>
+							<td>{{price}}</td>
 							<td><a href="/admin/projects/{{_id}}/edit" class="btn btn-default btn-tiny">Edit</a> <button class="btn btn-default delete_project">Delete</button></td>
 						</tr>
 					{{else}}
 						<tr>
-							<td>There are no projects</td>
+							<td>There are no products</td>
 						</tr>
 					{{/each}}		
 				</table>

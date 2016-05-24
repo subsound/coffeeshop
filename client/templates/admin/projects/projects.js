@@ -5,44 +5,35 @@ Template.layout.onRendered(function(){
 Template.add_project.events({
 	'submit .add_project_form': function(){
 		var name = event.target.name.value;
-		var type = event.target.type.value;
-		var client = event.target.client.value;
-		var description = event.target.description.value;
-		var projectDate = event.target.projectDate.value;
-		var projectlink = event.target.projectlink.value;
+		var price = event.target.price.value;
+		
 
-		var file = $('#projectImage').get(0).files[0];
+		var file = $('#productImage').get(0).files[0];
 
 		if(file){
 			fsFile = new FS.File(file);
-			ProjectImages.insert(fsFile, function(err, result){
+			ProductImages.insert(fsFile, function(err, result){
 				if(!err){
-					var projectImage = '/cfs/files/ProjectImages/' + result._id;
+					var productImage = '/cfs/files/ProductImages/' + result._id;
 
-					Projects.insert({
+					Products.insert({
 						name: name,
-						description: description,
-						type: type,
-						client: client,
-						projectDate: projectDate,
-						projectImage: projectImage,
-						projectlink: projectlink
+						price:price,
+						productImage: productImage
+						
 					});
 				}
 			});
 		} else {
-			Projects.insert({
+			Products.insert({
 						name: name,
-						description: description,
-						type: type,
-						client: client,
-						projectDate: projectDate,
-						projectImage: projectImage,
-						projectlink: projectlink
+						price:price,
+						productImage: productImage
+						
 					});
 		};
 
-		FlashMessages.sendSuccess('Project Added');
+		FlashMessages.sendSuccess('Product Added');
 		Router.go('/admin/projects');
 
 		return false;
@@ -53,50 +44,39 @@ Template.add_project.events({
 Template.edit_project.events({
 	'submit .edit_project_form': function(){
 		var name = event.target.name.value;
-		var type = event.target.type.value;
-		var client = event.target.client.value;
-		var description = event.target.description.value;
-		var projectDate = event.target.projectDate.value;
-		var projectlink = event.target.projectlink.value;
+		var price = event.target.price.value;
+		
 
-		var file = $('#projectImage').get(0).files[0];
+		var file = $('#productImage').get(0).files[0];
 
 		if(file){
 			fsFile = new FS.File(file);
-			ProjectImages.insert(fsFile, function(err, result){
+			ProductImages.insert(fsFile, function(err, result){
 				if(!err){
-					var projectImage = '/cfs/files/ProjectImages/' + result._id;
+					var productImage = '/cfs/files/ProductImages/' + result._id;
 
-					Projects.update({
+					Products.update({
 						_id: this._id
 					},{
 						$set: {	name: name,
-								description: description,
-								type: type,
-								client: client,
-								projectDate: projectDate,
-								projectImage: projectImage,
-								projectlink: projectlink
+								price: price,
+								productImage: productImage
 							  }
 					});
 				}
 			});
 		} else {
-			Projects.update({
+			Products.update({
 						_id: this._id
 					},{
 						$set: {
 							name: name,
-							description: description,
-							type: type,
-							client: client,
-							projectDate: projectDate,
-							projectlink: projectlink
+							price: price
 						}
 					});
 		};
 
-		FlashMessages.sendSuccess('Project Updated');
+		FlashMessages.sendSuccess('Product Updated');
 		Router.go('/admin/projects');
 
 		return false;
@@ -106,8 +86,8 @@ Template.edit_project.events({
 Template.list_projects.events({
 	'click .delete_project': function(event){
 		if(confirm("Are you sure?")) {
-			Projects.remove(this._id);
-			FlashMessages.sendSuccess("Project Deleted");
+			Products.remove(this._id);
+			FlashMessages.sendSuccess("Product Deleted");
 			//Prevent Submit
 			return false;
 		}
