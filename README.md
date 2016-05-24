@@ -1,5 +1,6 @@
-# codefolio
-Meteor Blog Post, And Project Post with Boostrap template Stanley
+# coffee
+coffee shop with cart sync on strype
+for correct work of strype pls run project with meteor --settings settings.json
 
 
 
